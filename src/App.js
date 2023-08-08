@@ -5,11 +5,11 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <>
+    <div>
       <Navbar />
       <MiddleSection />
       {/* Sidebar and Main */}
       <Footer />
-    </>
+    </div>
   );
 }

@@ -1,5 +1,5 @@
-import { Sidebar } from "./Sidebar"
-import { Main } from "./Main"
+import { Sidebar } from "./Sidebar";
+import { Main } from "./Main";
 
 function MiddleSection() {
   return (
@@ -7,12 +7,14 @@ function MiddleSection() {
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(5,1fr)",
-        marginBotton: "10px"
-      }}>
+        marginBotton: "20px",
+        gap: "5px",
+      }}
+    >
       <Sidebar />
       <Main />
     </div>
-  )
+  );
 }
 
-export { MiddleSection }
+export { MiddleSection };

@@ -1,21 +1,21 @@
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContextProvider";
 
-function Footer() {
+function Button({ btnText, onClick }) {
   const { theme } = useContext(ThemeContext);
+
   return (
-    <div
+    <button
+      onClick={onClick}
       style={{
-        marginTop: "20px",
-        height: "50px",
-        background: theme === "dark" ? "black" : "white",
+        backgroundColor: theme === "dark" ? "black" : "white",
         color: theme === "dark" ? "whitesmoke" : "black",
         border: theme === "dark" ? "1px solid white" : "1px solid black",
       }}
     >
-      FOOTER
-    </div>
+      {btnText}
+    </button>
   );
 }
 
-export { Footer };
+export { Button };

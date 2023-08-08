@@ -1,9 +1,12 @@
 import { useContext } from "react";
-import { AppContext } from "../context/AppContextProvider";
+import { AuthContext } from "../context/AuthContextProvider";
+import { ThemeContext } from "../context/ThemeContextProvider";
+import { Button } from "./Button";
 
 // Step 3 : Consume
 function Navbar() {
-  const { isAuth, login, logout } = useContext(AppContext);
+  const { isAuth, login, logout } = useContext(AuthContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div
@@ -14,12 +17,14 @@ function Navbar() {
         alignItems: "center",
         justifyContent: "space-around",
         marginBottom: "20px",
+        backgroundColor: theme === "dark" ? "black" : "transparent",
+        color: theme === "dark" ? "whitesmoke" : "black",
       }}
     >
       <h3> Is User Authenticated : {isAuth ? "Yes" : "No"} </h3>
       <div>
-        <button onClick={login}>LOGIN</button>
-        <button onClick={logout}>LOGOUT</button>
+        <Button btnText="LOGIN" onClick={login} />
+        <Button btnText="LOGOUT" onClick={logout} />
       </div>
     </div>
   );
